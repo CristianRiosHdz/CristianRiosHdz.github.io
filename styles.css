@@ -70,15 +70,7 @@ button:hover {
     background: transparent;
     box-shadow: 0 0 10px 5px #ffeb3b;
     border-radius: 50%;
-    animation: explode 1s ease-in-out infinite;
-}
-
-.firework:nth-child(2) {
-    animation-delay: 0.2s;
-}
-
-.firework:nth-child(3) {
-    animation-delay: 0.4s;
+    animation: explode 1s ease-in-out infinite, fadeOut 2s linear infinite;
 }
 
 @keyframes explode {
@@ -88,6 +80,15 @@ button:hover {
     }
     50% {
         transform: scale(3);
+        opacity: 0;
+    }
+}
+
+@keyframes fadeOut {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
         opacity: 0;
     }
 }
